@@ -187,7 +187,7 @@ ensure point doesn't jump due to white space trimming.
        (save-excursion
          (setq beg (progn (goto-char beg)
                           (point-at-bol))
-               end (progn (goto-char end)
+               end (progn (goto-char (1- end))
                           (point-at-eol))))
        (ws-butler-clean-region beg end)
        (setq last-end end)))
